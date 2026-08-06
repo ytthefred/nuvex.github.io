@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuvex — Roblox Development Portfolio</title>
+<meta name="description" content="Nuvex — команда Roblox-разработки. GUI-дизайн, анимации, системы и механики.">
+
+<!-- Шрифты -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- фоновое сияние + снег, чисто декоративное -->
+<div class="aurora" aria-hidden="true"></div>
+<canvas id="snowfall" aria-hidden="true"></canvas>
+
+<!-- ==========================================================
+     БОКОВАЯ НАВИГАЦИЯ
+     Иконки — простые SVG, ничего менять не нужно.
+     Если добавишь новую секцию — скопируй один <a> и поменяй href.
+=========================================================== -->
+<nav class="side-nav" aria-label="Основная навигация">
+  <a href="#home" data-section="home" aria-label="Главная">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+    <span class="nav-label">Main</span>
+  </a>
+  <a href="#about" data-section="about" aria-label="Обо мне">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/></svg>
+    <span class="nav-label">About me</span>
+  </a>
+  <a href="#prices" data-section="prices" aria-label="Цены">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7l4-4h10l4 4v4c0 6-4.5 9.5-9 11-4.5-1.5-9-5-9-11V7z"/></svg>
+    <span class="nav-label">Prices</span>
+  </a>
+  <a href="#portfolio" data-section="portfolio" aria-label="Портфолио">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 4-4 5 5"/></svg>
+    <span class="nav-label">Portfolio</span>
+  </a>
+</nav>
+
+<!-- ==========================================================
+     1. HERO
+=========================================================== -->
+<section class="section hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow"><span class="robloxy-loader" aria-hidden="true"></span>Nuvex Studio · Roblox Development</p>
+      <h1>Here you are.<br>You can stay, <span class="accent">or you can leave.</span></h1>
+      <p class="lede">I create GUIs, animations, systems, and mechanics for Roblox and I lead the Nuvex team. If you need a portfolio to take my word for it, here it is.</p>
+      <div class="cta-row">
+        <a href="#portfolio" class="btn btn-primary">Look Portfolio</a>
+        <a href="#prices" class="btn btn-ghost">Look Prices</a>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <div class="ice-plate">
+        <!-- ЗАМЕНА АВАТАРА: положи свою картинку в assets/ и поменяй путь ниже -->
+        <img src="assets/hero-character.png" alt="Roblox-аватар Nuvex">
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll down to see more</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- ветвистый разделитель — фирменный элемент, можно оставить на всех секциях -->
+<div class="brick-divider" aria-hidden="true">
+  <div class="line"></div>
+  <div class="studs">
+    <span class="stud"></span><span class="stud"></span><span class="stud"></span><span class="stud"></span>
+  </div>
+  <div class="line"></div>
+</div>
+
+<!-- ==========================================================
+     2. ОБО МНЕ + ПРОЕКТЫ
+=========================================================== -->
+<section class="section" id="about">
+  <div class="about-grid">
+    <div>
+      <p class="eyebrow">01 — About</p>
+      <h2>Let's get to know each other better</h2>
+      <p class="bio">
+        I'm a <strong>Roblox developer</strong>who makes YouTube videos and streams. I've worked on numerous projects, including UI design and coding. 
+        I've created numerous animations and left my mark on numerous projects, as has my team, <strong>Nuvex</strong>, - I'm its founder. 
+        I also designed this website c:
+      </p>
+    </div>
+
+    <div>
+      <p class="eyebrow" style="margin-bottom:0;">Projects</p>
+      <div class="project-list">
+        <!-- КАЖДЫЙ ПРОЕКТ — это один .project блок. Скопируй и поменяй текст, чтобы добавить новый -->
+        <div class="project">
+          <span class="tag dev">In progress</span>
+          <div>
+            <h3>«МИР ФРЕДА» (Fred's World)</h3>
+            <p>My place for subscribers is still a work in progress. It also doubles as a portfolio.</p>
+          </div>
+        </div>
+        <div class="project">
+          <span class="tag dev">In progress</span>
+          <div>
+            <h3>Survive the AI Apocalypse</h3>
+            <p>I participate in development as a UI designer and GUI and systems coder.</p>
+          </div>
+        </div>
+        <div class="project">
+          <span class="tag">Contract</span>
+          <div>
+            <h3>Donation Island</h3>
+            <p>Russian «PLS DONATE». Served as a UI designer and coder on minor mechanics. Fixed bugs and made changes.</p>
+          </div>
+        </div>
+        <div class="project">
+          <span class="tag active">Active</span>
+          <div>
+            <h3>The Unseen Sea</h3>
+            <p>A place under active development. I hold the role of General Manager. Inspired by the old place Scuba Diving at Quill Lake.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="brick-divider" aria-hidden="true">
+  <div class="line"></div>
+  <div class="studs">
+    <span class="stud"></span><span class="stud"></span><span class="stud"></span><span class="stud"></span>
+  </div>
+  <div class="line"></div>
+</div>
+
+<!-- ==========================================================
+     3. ЦЕНЫ
+=========================================================== -->
+<section class="section" id="prices">
+  <p class="eyebrow">02 — Prices</p>
+  <h2 style="font-size:clamp(28px,3.6vw,42px); margin-bottom:36px;">What it costs to work with me</h2>
+
+  <div class="price-grid">
+    <div class="price-card">
+      <h3>GUI · Design · Animations</h3>
+      <p>I create the design in Figma, and after approval, I transfer it to Roblox with GUI adaptation for all devices.</p>
+      <div class="price-tag">from&nbsp;<b>$5</b></div>
+    </div>
+
+    <div class="price-card">
+      <h3>Systems · Mechanics · Other code</h3>
+      <p>I write code in VS Code. I use AI when I need to create a convenient structure and think through how the code works, but these cases are rare. I protect the code from cheaters and make it flexible for customization.</p>
+      <div class="price-tag">from&nbsp;<b>$18</b></div>
+    </div>
+
+    <div class="price-note">
+      <p>You can find more detailed information here in Telegram</p>
+      <!-- ЗАМЕНИ ССЫЛКУ на свой реальный Telegram -->
+      <a href="https://t.me/NuvexStudio" target="_blank" rel="noopener">@NuvexStudio →</a>
+    </div>
+  </div>
+</section>
+
+<div class="brick-divider" aria-hidden="true">
+  <div class="line"></div>
+  <div class="studs">
+    <span class="stud"></span><span class="stud"></span><span class="stud"></span><span class="stud"></span>
+  </div>
+  <div class="line"></div>
+</div>
+
+<!-- ==========================================================
+     4. ПОРТФОЛИО
+     Тут два блока: GUI/анимации и Карты/геймдизайн.
+     Плитки с пунктирной рамкой — ПУСТЫЕ, замени их на свои картинки/видео.
+=========================================================== -->
+<section class="section" id="portfolio">
+  <p class="eyebrow">03 — Portfolio</p>
+  <h2 style="font-size:clamp(28px,3.6vw,42px); margin-bottom:40px;">See for yourself what I can do</h2>
+
+  <div class="portfolio-block">
+    <h3>GUI · Design · Animations</h3>
+    <p class="sub">Screenshots and short videos of interfaces I made.</p>
+    <div class="tile-grid">
+
+      <!-- ===== ПРИМЕР ПУСТОЙ ПЛИТКИ ДЛЯ КАРТИНКИ =====
+           1) Положи файл в assets/portfolio/, например: assets/portfolio/shop-ui.png
+           2) Удали div class="tile placeholder" целиком
+           3) Вставь вместо него:
+              <div class="tile">
+                <img src="assets/portfolio/shop-ui.png" alt="Описание работы">
+                <div class="tile-caption">Название работы</div>
+              </div>
+      -->
+              <div class="tile">
+                <img src="assets/portfolio/shop-ui.png" alt="Магазин сделанный в ретро стиле">
+                <div class="tile-caption">Retro style store</div>
+              </div>
+      <!-- ===== ПРИМЕР ПУСТОЙ ПЛИТКИ ДЛЯ ВИДЕО =====
+           1) Положи файл в assets/portfolio/, например: assets/portfolio/quest-demo.mp4
+           2) Вставь вместо плейсхолдера:
+
+      -->
+              <div class="tile">
+                <video src="assets/portfolio/quest-demo.mp4" autoplay muted loop playsinline></video>
+                <div class="tile-caption">GUI from the project – NFT GIFTS BETA</div>
+              </div>
+
+              <div class="tile">
+                <video src="assets/portfolio/inventory-ui.mp4" autoplay muted loop playsinline></video>
+                <div class="tile-caption">Inventory GUI. Models in the card — ViewportFrame</div>
+              </div>
+
+    </div>
+  </div>
+
+  <div class="portfolio-block">
+    <h3>Maps · Game Designs</h3>
+    <p class="sub">I use free asset packs and my own models.</p>
+    <div class="tile-grid">
+
+      <!-- Это уже реальные работы — просто держи их или замени на новые точно так же -->
+      <div class="tile">
+        <img src="assets/portfolio/map-freds-world.png" alt="Карта проекта «Мир Фреда»">
+        <div class="tile-caption">Fred's World</div>
+      </div>
+
+      <div class="tile">
+        <img src="assets/portfolio/map-unseen-sea.png" alt="Карта по запросу клиента 1">
+        <div class="tile-caption">Map on request. Cherry Blossom Island.</div>
+      </div>
+
+      <div class="tile">
+        <img src="assets/portfolio/map-3.png" alt="Карта по запросу клиента 2">
+        <div class="tile-caption">Map upon customer request. Farm</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ЗАМЕНИ ССЫЛКУ на полную папку портфолио / отдельную страницу -->
+  <a href="#" class="portfolio-more">You can see more of the portfolio by clicking on this text →</a>
+</section>
+
+<div class="brick-divider" aria-hidden="true">
+  <div class="line"></div>
+  <div class="studs">
+    <span class="stud"></span><span class="stud"></span><span class="stud"></span><span class="stud"></span>
+  </div>
+  <div class="line"></div>
+</div>
+
+<!-- ==========================================================
+     5. КОНЕЦ / КОНТАКТЫ
+=========================================================== -->
+<section class="section end-section" id="end">
+  <div class="end-inner">
+    <div>
+      <p class="eyebrow">This is the end</p>
+      <h2>Ready to discuss your project.</h2>
+      <div class="end-links">
+        <!-- ЗАМЕНИ ссылки на свои реальные аккаунты -->
+        <a href="https://www.youtube.com/@ytthefred" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3V9z" fill="currentColor" stroke="none"/></svg>
+          YouTube
+        </a>
+        <a href="https://discordapp.com/users/359290595421716483" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="6"/><circle cx="9" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+          Discord
+        </a>
+        <a href="https://www.roblox.com/users/356851505/profile" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4" transform="rotate(0 12 12)"/></svg>
+          Roblox
+        </a>
+        <a href="https://t.me/NuvexStudio" target="_blank" rel="noopener" class="order">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 3L3 10.5l7 2.5m11-10l-4 17-7-6m11-11L10 13"/></svg>
+          Order here
+        </a>
+      </div>
+    </div>
+    <div class="end-figure">
+      <div class="ice-plate">
+        <img src="assets/hero-character.png" alt="Roblox-аватар Nuvex">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span>Powered by Nuvex</span>
+  <!-- поменяй подпись ниже, если захочешь -->
+  <span>© <span id="year"></span> Nuvex Studio</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
